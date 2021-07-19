@@ -1,12 +1,12 @@
 {
-  "name": "migrate-husky-to-v6",
+  "name": "migrate-husky-to-v7",
   "version": "1.0.10",
   "description": "Script to migrate your husky project to v6(YARN)",
   "main": "index.js",
   "author": "Andrii Klubuk",
   "license": "MIT",
   "bin": {
-    "migrate-husky-to-v6": "./remake.sh"
+    "migrate-husky-to-v7": "./remake.sh"
   },
   "scripts": {
     "start": "./remake.sh",
