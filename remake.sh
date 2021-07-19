@@ -13,18 +13,18 @@ chmod +x ./.husky/post-commit
 rm ./.husky/pre-commit || true
 touch ./.husky/pre-commit
 chmod +x ./.husky/pre-commit
-cat -e <<EOT >> ./.husky/pre-commit
+cat > ./.husky/pre-commit << EOF
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
 yarn lint-staged
 yarn type-check
-EOT
-cat -e <<EOT >> ./.husky/post-commit
+EOF
+cat > ./.husky/pre-commit << EOF
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
 git update-index --again
-EOT
+EOF
 brew install jq || sudo apt-get install jq || true
 (jq 'del(.husky)' package.json > package.json.tmp && rm package.json && mv package.json.tmp package.json) || echo "Please manually remove entry about husky from package.json"
