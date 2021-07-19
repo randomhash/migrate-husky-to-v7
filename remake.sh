@@ -28,5 +28,4 @@ brew install jq || sudo apt-get install jq || true
 yarn add -E -D husky
 rm ./.husky/_/.gitignore
 echo "!.husky/_/husky.sh" >> .gitignore
-echo "" >> .gitignore
 echo 'Done'
