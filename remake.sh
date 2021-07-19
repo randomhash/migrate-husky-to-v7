@@ -19,3 +19,4 @@ echo 'git update-index --again' >> ./.husky/post-commit
 
 brew install jq || sudo apt-get install jq || true
 (jq 'del(.husky)' package.json > package.json.tmp && rm package.json && mv package.json.tmp package.json) || echo "Please manually remove entry about husky from package.json"
+sed '/\"husky\"/,/}/ d; /^$/d' package.json
