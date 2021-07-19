@@ -6,7 +6,7 @@
   "author": "Andrii Klubuk",
   "license": "MIT",
   "bin": {
-    "migrate-husky-to-v7": "./remake.sh"
+    "migrate-husky-to-v7": "remake.sh"
   },
   "scripts": {
     "start": "./remake.sh",
