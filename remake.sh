@@ -1,6 +1,7 @@
 #!/bin/sh
-yarn add -E husky --dev && npx husky-init && npm exec -- github:typicode/husky-4-to-6 --remove-v4-config
-yarn add -E husky
+yarn add husky@latest --dev \
+  && npx husky-init \
+  && npm exec -- github:typicode/husky-4-to-7 --remove-v4-config
 echo 'Config recreated'
 pwd
 touch ./.husky/post-commit
@@ -23,3 +24,4 @@ git update-index --again
 EOT
 brew install jq || sudo apt-get install jq || true
 (jq 'del(.husky)' package.json > package.json.tmp && rm package.json && mv package.json.tmp package.json) || echo "Please manually remove entry about husky from package.json"
+yarn add -E -D husky
