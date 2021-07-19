@@ -1,4 +1,6 @@
 #!/bin/sh
+rm -r node_modules || true
+yarn
 yarn add husky@latest --exact --dev \
   && npx husky-init \
   && npm exec -- github:typicode/husky-4-to-7 --remove-v4-config
