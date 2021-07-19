@@ -15,15 +15,16 @@ touch ./.husky/pre-commit
 chmod +x ./.husky/pre-commit
 cat > ./.husky/pre-commit << EOF
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
+EOF
+echo '. "$(dirname "$0")/_/husky.sh"' > ./.husky/pre-commit
+cat > ./.husky/pre-commit << EOF
 yarn lint-staged
-yarn type-check
 EOF
 cat > ./.husky/pre-commit << EOF
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
+EOF
+echo '. "$(dirname "$0")/_/husky.sh"' > ./.husky/post-commit
+cat > ./.husky/post-commit << EOF
 git update-index --again
 EOF
 brew install jq || sudo apt-get install jq || true
