@@ -1,4 +1,5 @@
 #!/bin/sh
+rm -rf .husky || true && git config --unset core.hooksPath |\ true
 yarn add husky@latest --dev \
   && npx husky-init \
   && npm exec -- github:typicode/husky-4-to-7 --remove-v4-config
