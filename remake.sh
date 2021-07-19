@@ -1,6 +1,9 @@
 #!/bin/sh
-rm -rf .husky || true && git config --unset core.hooksPath |\ true
-yarn add husky@latest --dev \
+echo 'Delete node modules in 5'
+# sleep 5s
+rm -r node_modules || true
+yarn
+yarn add husky@latest --exact --dev \
   && npx husky-init \
   && npm exec -- github:typicode/husky-4-to-7 --remove-v4-config
 echo 'Config recreated'
@@ -25,4 +28,3 @@ git update-index --again
 EOT
 brew install jq || sudo apt-get install jq || true
 (jq 'del(.husky)' package.json > package.json.tmp && rm package.json && mv package.json.tmp package.json) || echo "Please manually remove entry about husky from package.json"
-yarn add -E -D husky
