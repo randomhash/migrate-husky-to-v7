@@ -1,5 +1,6 @@
 #!/bin/sh
 yarn add -E husky --dev && npx husky-init && npm exec -- github:typicode/husky-4-to-6 --remove-v4-config
+yarn add -E husky
 echo 'Config recreated'
 pwd
 touch ./.husky/post-commit
@@ -22,4 +23,4 @@ git update-index --again
 EOT
 sed '/\"husky\"/,/}/ d; /^$/d' package.json
 brew install jq || sudo apt-get install jq || true
-jq 'del(.husky)' package.json || echo "Please manually remove entry about husky from package.json"
+(jq 'del(.husky)' package.json > package.json.tmp && rm package.json && mv package.json.tmp package.json) || echo "Please manually remove entry about husky from package.json"
