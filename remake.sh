@@ -13,7 +13,6 @@ cat <<EOT >> ./.husky/pre-commit
 . "$(dirname "$0")/_/husky.sh"
 
 yarn lint-staged
-yarn type-check
 EOT
 cat <<EOT >> ./.husky/post-commit
 #!/bin/sh
