@@ -1,6 +1,6 @@
 {
   "name": "migrate-husky-to-v7",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Script to migrate your husky project to v6(YARN)",
   "main": "index.js",
   "author": "Andrii Klubuk",
