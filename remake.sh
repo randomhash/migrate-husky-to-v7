@@ -1,7 +1,9 @@
 #!/bin/sh
 rm -r node_modules || true
-yarn
+(jq 'del(.scripts.prepare)' package.json > package.json.tmp && rm package.json && mv package.json.tmp package.json) || echo "No prepare step, looks good"
 yarn add -E -D husky@4
+echo "installed husky v4"
+yarn
 yarn add husky@latest --exact --dev \
   && npx husky-init \
   && npm exec -- github:typicode/husky-4-to-7 --remove-v4-config
@@ -24,6 +26,7 @@ brew install jq || sudo apt-get install jq || true
 (jq 'del(.husky)' package.json > package.json.tmp && rm package.json && mv package.json.tmp package.json) || echo "Please manually remove entry about husky from package.json"
 (jq 'del(.scripts.prepare)' package.json > package.json.tmp && rm package.json && mv package.json.tmp package.json) || echo "Please manually remove entry about husky from package.json"
 yarn add -E -D husky
-rm .husky/_/.gitignore
-echo "!.husky/_/husky.sh" > .gitignore
+rm ./.husky/_/.gitignore
+echo "!.husky/_/husky.sh" >> .gitignore
+echo "" >> .gitignore
 echo 'Done'
