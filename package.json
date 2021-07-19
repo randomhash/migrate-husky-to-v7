@@ -1,11 +1,22 @@
 {
   "name": "migrate-husky-to-v6",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Script to migrate your husky project to v6(YARN)",
   "main": "index.js",
   "author": "Andrii Klubuk",
   "license": "MIT",
   "bin": {
-    "start": "./remake.sh"
-  }
+    "migrate-husky-to-v6": "./remake.sh"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randomhash/migrate-husky-to-v6.git"
+  },
+  "bugs": {
+    "url": "https://github.com/randomhash/migrate-husky-to-v6/issues"
+  },
+  "homepage": "https://github.com/randomhash/migrate-husky-to-v6#readme"
 }
