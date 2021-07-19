@@ -1,6 +1,6 @@
 #!/bin/sh
-yarn add -E -D husky && npx husky-init && npm exec -- github:typicode/husky-4-to-6 --remove-v4-config
-yarn add -E -D husky
+yarn add -E husky --dev && npx husky-init && npm exec -- github:typicode/husky-4-to-6 --remove-v4-config
+yarn add -E husky
 echo 'Config recreated'
 pwd
 touch ./.husky/post-commit
@@ -13,6 +13,7 @@ cat <<EOT >> ./.husky/pre-commit
 . "$(dirname "$0")/_/husky.sh"
 
 yarn lint-staged
+yarn type-check
 EOT
 cat <<EOT >> ./.husky/post-commit
 #!/bin/sh
