@@ -1,6 +1,6 @@
 {
   "name": "migrate-husky-to-v6",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Script to migrate your husky project to v6(YARN)",
   "main": "index.js",
   "author": "Andrii Klubuk",
@@ -9,6 +9,7 @@
     "migrate-husky-to-v6": "./remake.sh"
   },
   "scripts": {
+    "start": "./remake.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
